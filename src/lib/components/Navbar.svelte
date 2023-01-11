@@ -8,8 +8,8 @@
 	const routes = [
 		{ name: 'Home', href: '/' },
 		{ name: 'About', href: '/about' },
-		{ name: 'Games', href: '#' },
-		{ name: 'Bots', href: '#' },
+		{ name: 'Games', href: '/games' },
+		{ name: 'Bots', href: '/bots' },
 	];
 
 	const transitionOpts = {

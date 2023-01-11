@@ -27,6 +27,10 @@ h6 {
 
 main {
 	padding-inline: 1rem;
+
+	> h1:first-child {
+		text-align: center;
+	}
 }
 
 nav {
@@ -43,6 +47,11 @@ nav {
 	}
 }
 
-main > h1:first-child {
-	text-align: center;
+a,
+iconify-icon {
+	color: $clr-accent;
+}
+
+address {
+	font-style: italic;
 }
