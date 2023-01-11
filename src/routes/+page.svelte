@@ -1,7 +1,9 @@
 <script lang="ts">
+	import funny from '$lib/assets/funny.gif';
 </script>
 
 <main>
 	<h1>gamercenter</h1>
-	<p>Lorem ipsum dolor sit amet consectetur.</p>
+	<p>Third time's the charm.</p>
+	<img src={funny} alt="Rick astley funny gif" />
 </main>
