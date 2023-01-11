@@ -1,6 +1,6 @@
 <script lang="ts">
+	import { fly, slide } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
-	import { slide, fly } from 'svelte/transition';
 
 	export let always: boolean;
 	export let enabled: boolean;

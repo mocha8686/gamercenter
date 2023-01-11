@@ -17,4 +17,13 @@ module.exports = {
 		es2017: true,
 		node: true,
 	},
+	rules: {
+		'sort-imports': [
+			'warn',
+			{
+				memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+				allowSeparatedGroups: true,
+			},
+		],
+	},
 };

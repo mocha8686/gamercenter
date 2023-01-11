@@ -6,4 +6,3 @@ Gaming gamers.
 
 - [x] Implement hamburger menu
 - [x] Hamburger animation
-

@@ -1,13 +1,12 @@
 <script lang="ts">
 	import '@fontsource/fira-code';
 	import Icon from 'svelte-icon/Icon.svelte';
-	import { cubicInOut } from 'svelte/easing';
-	import { fade } from 'svelte/transition';
-
-	import logo from '$lib/assets/logo.svg?raw';
-	import hamburger from '$lib/assets/hamburger.svg?raw';
 	import Navbar from './Navbar.svelte';
 	import { browser } from '$app/environment';
+	import { cubicInOut } from 'svelte/easing';
+	import { fade } from 'svelte/transition';
+	import hamburger from '$lib/assets/hamburger.svg?raw';
+	import logo from '$lib/assets/logo.svg?raw';
 
 	const transitionOpts = {
 		duration: 200,
@@ -76,4 +75,3 @@
 		}
 	}
 </style>
-

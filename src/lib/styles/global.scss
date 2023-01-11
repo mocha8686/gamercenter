@@ -15,7 +15,12 @@ body {
 	font-family: $ff-primary;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	color: $clr-text-header;
 	font-family: $ff-header;
 }
@@ -25,7 +30,8 @@ main {
 }
 
 nav {
-	ul, ol {
+	ul,
+	ol {
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
