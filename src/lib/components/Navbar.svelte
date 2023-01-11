@@ -1,13 +1,17 @@
 <script lang="ts">
 	import { fly, slide } from 'svelte/transition';
+	import { createEventDispatcher } from 'svelte';
 	import { cubicInOut } from 'svelte/easing';
 
 	export let always: boolean;
 	export let enabled: boolean;
 
+	const dispatch = createEventDispatcher();
+	const navigate = () => dispatch('navigate');
+
 	const routes = [
 		{ name: 'Home', href: '/' },
-		{ name: 'About', href: '#' },
+		{ name: 'About', href: '/about' },
 		{ name: 'Games', href: '#' },
 		{ name: 'Bots', href: '#' },
 	];
@@ -24,7 +28,11 @@
 	<nav class="mobile" transition:slide={transitionOpts}>
 		<ul>
 			{#each routes as route}
-				<li><a class="nav-link" href={route.href}>{route.name}</a></li>
+				<li>
+					<a class="nav-link" href={route.href} on:click={navigate}>
+						{route.name}
+					</a>
+				</li>
 			{/each}
 		</ul>
 	</nav>
@@ -75,7 +83,7 @@
 		}
 	}
 
-	@media (hover: hover) {
+	@media screen and (hover: hover) {
 		.nav-link {
 			transition: color 150ms ease-out;
 		}

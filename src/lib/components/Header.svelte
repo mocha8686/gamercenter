@@ -13,10 +13,13 @@
 		easing: cubicInOut,
 	};
 
+	const toggleEnabled = () => (enabled = !enabled);
+
 	let enabled = false;
 	let always = false;
 
 	if (browser) {
+		always = window.matchMedia('(min-width: 450px)').matches;
 		window.addEventListener('resize', () => {
 			always = window.matchMedia('(min-width: 450px)').matches;
 		});
@@ -28,15 +31,11 @@
 		<Icon data={logo} size="4rem" />
 	</a>
 	{#if !always}
-		<button
-			transition:fade={transitionOpts}
-			class="hamburger-button"
-			on:click={() => (enabled = !enabled)}
-		>
+		<button transition:fade={transitionOpts} class="hamburger-button" on:click={toggleEnabled}>
 			<Icon data={hamburger} size="2rem" />
 		</button>
 	{/if}
-	<Navbar {always} {enabled} />
+	<Navbar {always} {enabled} on:navigate={toggleEnabled} />
 </header>
 <slot />
 
@@ -44,6 +43,9 @@
 	@use '$lib/styles/variables' as *;
 
 	header {
+		position: relative;
+		z-index: 1000;
+
 		background-color: $clr-background-accent;
 
 		display: grid;
