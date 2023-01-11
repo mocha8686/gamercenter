@@ -1,4 +1,10 @@
 <script lang="ts">
+	import { cubicInOut } from 'svelte/easing';
+	import { slide, fly } from 'svelte/transition';
+
+	export let always: boolean;
+	export let enabled: boolean;
+
 	const routes = [
 		{ name: 'Home', href: '/' },
 		{ name: 'About', href: '#' },
@@ -6,38 +12,57 @@
 		{ name: 'Bots', href: '#' },
 	];
 
-	export let enabled: boolean;
+	const transitionOpts = {
+		duration: 300,
+		easing: cubicInOut,
+		x: 100,
+	};
 </script>
 
-<nav hidden={!enabled}>
-	<ul>
-		{#each routes as route}
-			<li><a class="nav-link" href={route.href}>{route.name}</a></li>
-		{/each}
-	</ul>
-</nav>
+<!-- Mobile -->
+{#if !always && enabled}
+	<nav class="mobile" transition:slide={transitionOpts}>
+		<ul>
+			{#each routes as route}
+				<li><a class="nav-link" href={route.href}>{route.name}</a></li>
+			{/each}
+		</ul>
+	</nav>
+{/if}
+
+<!-- Desktop -->
+{#if always}
+	<nav class="desktop" transition:fly={transitionOpts}>
+		<ul>
+			{#each routes as route}
+				<li><a class="nav-link" href={route.href}>{route.name}</a></li>
+			{/each}
+		</ul>
+	</nav>
+{/if}
 
 <style lang="scss">
 	@use '$lib/styles/variables' as *;
 
-	$nav-duration: 250ms;
-	$link-duration: 100ms;
-	$links: 4;
-
-	$nav-delay: $link-duration;
-	$link-delay: $nav-duration;
-	$delay-gap: 50ms;
-	$link-delay-gap: 50ms;
-
 	nav {
-		grid-column: 1/3;
+		grid-area: nav;
+
 		background-color: $clr-background-accent;
 		font-family: $ff-header;
 
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+
+		&.desktop {
+			grid-area: nav-header;
+			flex-direction: row;
+			justify-content: flex-end;
+			gap: 2rem;
+		}
+
 		ul {
-			display: flex;
-			flex-direction: column;
-			align-items: stretch;
+			display: contents;
 
 			li {
 				text-align: center;

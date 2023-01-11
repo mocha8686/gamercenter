@@ -5,4 +5,5 @@ Gaming gamers.
 ## TODO
 
 - [x] Implement hamburger menu
-- [ ] Hamburger animation
+- [x] Hamburger animation
+
