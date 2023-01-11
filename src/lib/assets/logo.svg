@@ -22,7 +22,7 @@
        style="fill:#ffffff">
       <text
          xml:space="preserve"
-         style="font-size:50.8px;white-space:pre;inline-size:116.585;display:inline;fill:#ffffff;stroke-width:0.264583"
+         style="font-size:47px;white-space:pre;inline-size:116.585;display:inline;fill:#ffffff;stroke-width:0.264583"
          x="68.50383"
          y="50.431499"
          id="text117"
@@ -30,7 +30,7 @@
            x="68.50383"
            y="50.431499"
            id="tspan70"><tspan
-             style="font-family:'CodeNewRoman Nerd Font';-inkscape-font-specification:'CodeNewRoman Nerd Font'"
+             style="font-family:'Fira Code', monospace;"
              id="tspan68">&lt;gc&gt;</tspan></tspan></text>
     </a>
   </g>

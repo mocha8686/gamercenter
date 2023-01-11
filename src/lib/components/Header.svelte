@@ -1,41 +1,51 @@
 <script lang="ts">
-	import Navbar from './Navbar.svelte';
+	import '@fontsource/fira-code';
 	import Icon from 'svelte-icon/Icon.svelte';
 
 	import logo from '$lib/assets/logo.svg?raw';
 	import hamburger from '$lib/assets/hamburger.svg?raw';
-
-	import '$lib/styles/global.scss';
-	import 'normalize.css/normalize.css';
+	import Navbar from './Navbar.svelte';
 
 	let enabled = false;
 </script>
 
 <header>
-	<div class="logo-container">
+	<a class="logo-link" href="/">
 		<Icon data={logo} size="4rem" />
-	</div>
-	<div class="hamburger-container">
+	</a>
+	<button class="hamburger-button" on:click={() => (enabled = !enabled)}>
 		<Icon data={hamburger} size="2rem" />
-	</div>
+	</button>
 </header>
 <Navbar {enabled} />
 <slot />
 
 <style lang="scss">
-	header {
-		display: grid;
-		grid-template: 4rem / auto 4rem;
-		align-items: center;
-		justify-items: center;
+	@use '$lib/styles/variables' as *;
 
-		.logo-container {
-			grid-row: 1;
-			grid-column: 1 / 3;
+	header {
+		background-color: $clr-background-accent;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding-inline: 1rem;
+
+		.logo-link {
+			justify-self: start;
+			display: flex;
+			align-items: center;
 		}
-		.hamburger-container {
-			grid-row: 1;
-			grid-column: 2 / 3;
+
+		.hamburger-button {
+			position: relative;
+			z-index: 1;
+
+			justify-self: end;
+			background: none;
+			border: none;
+			cursor: pointer;
 		}
 	}
 </style>

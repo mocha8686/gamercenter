@@ -2,9 +2,6 @@
 </script>
 
 <main>
-	<h1>gamercenter</h1>
-	<p>Lorem ipsum dolor sit amet</p>
+	<h1 class="center">gamercenter</h1>
+	<p>Lorem ipsum dolor sit amet consectetur.</p>
 </main>
-
-<style lang="scss">
-</style>

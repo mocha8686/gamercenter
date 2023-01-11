@@ -1,7 +1,10 @@
-@use 'nord/src/sass/nord.scss' as *;
+$clr-background-main: hsl(0deg, 0%, 10%);
+$clr-background-accent: hsl(0, 0%, 15%);
 
-$foreground-color-main: $nord6;
-$foreground-color-sub: $nord5;
+$clr-text-main: hsl(0deg, 0%, 100%);
+$clr-text-header: $clr-text-main;
 
-$background-color-main: $nord0;
-$background-color-sub: $nord1;
+$clr-accent: hsl(219deg, 100%, 76%);
+
+$ff-header: 'JetBrains Mono', monospace;
+$ff-primary: 'Roboto', sans-serif;

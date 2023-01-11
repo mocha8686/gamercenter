@@ -2,21 +2,41 @@
 @use '@fontsource/jetbrains-mono';
 @use '@fontsource/roboto';
 
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	font: inherit;
+}
+
 body {
-	background-color: $background-color-main;
-	color: $foreground-color-main;
-	font-family: 'Roboto', sans-serif;
+	background-color: $clr-background-main;
+	color: $clr-text-main;
+	font-family: $ff-primary;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'JetBrains Mono', monospace;
-}
-
-h1 {
-	display: flex;
-	justify-content: center;
+	color: $clr-text-header;
+	font-family: $ff-header;
 }
 
 main {
 	padding-inline: 1rem;
+}
+
+nav {
+	ul, ol {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: inherit;
+	}
+}
+
+main > h1:first-child {
+	text-align: center;
 }
