@@ -58,16 +58,22 @@
 		.logo-link {
 			grid-area: logo;
 			justify-self: start;
+
 			display: flex;
 			align-items: center;
+			text-decoration: none;
 		}
 
 		.hamburger-button {
+			padding: 0;
+
 			grid-area: nav-header;
 			justify-self: end;
+
 			background: none;
 			border: none;
 			cursor: pointer;
 		}
 	}
 </style>
+
