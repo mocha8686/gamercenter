@@ -7,6 +7,7 @@
 	import { fade } from 'svelte/transition';
 	import hamburger from '$lib/assets/hamburger.svg?raw';
 	import logo from '$lib/assets/logo.svg?raw';
+	import { page } from '$app/stores';
 
 	const transitionOpts = {
 		duration: 200,
@@ -14,6 +15,7 @@
 	};
 
 	const toggleEnabled = () => (enabled = !enabled);
+	const hide = () => (enabled = false);
 
 	let enabled = false;
 	let always = false;
@@ -23,6 +25,14 @@
 		window.addEventListener('resize', () => {
 			always = window.matchMedia('(min-width: 450px)').matches;
 		});
+	}
+
+	let url = $page.url.href;
+	$: {
+		if ($page.url.href !== url) {
+			url = $page.url.href;
+			hide();
+		}
 	}
 </script>
 
@@ -35,7 +45,7 @@
 			<Icon data={hamburger} size="2rem" />
 		</button>
 	{/if}
-	<Navbar {always} {enabled} on:navigate={toggleEnabled} />
+	<Navbar {always} {enabled} />
 </header>
 <slot />
 
@@ -62,7 +72,7 @@
 
 			display: flex;
 			align-items: center;
-			text-decoration: none;
+			text-decoration: inherit;
 		}
 
 		.hamburger-button {

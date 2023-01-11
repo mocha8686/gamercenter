@@ -1,13 +1,9 @@
 <script lang="ts">
 	import { fly, slide } from 'svelte/transition';
-	import { createEventDispatcher } from 'svelte';
 	import { cubicInOut } from 'svelte/easing';
 
 	export let always: boolean;
 	export let enabled: boolean;
-
-	const dispatch = createEventDispatcher();
-	const navigate = () => dispatch('navigate');
 
 	const routes = [
 		{ name: 'Home', href: '/' },
@@ -29,7 +25,7 @@
 		<ul>
 			{#each routes as route}
 				<li>
-					<a class="nav-link" href={route.href} on:click={navigate}>
+					<a class="nav-link" href={route.href}>
 						{route.name}
 					</a>
 				</li>
