@@ -13,6 +13,7 @@ body {
 	background-color: $clr-background-main;
 	color: $clr-text-main;
 	font-family: $ff-primary;
+	overflow-x: hidden;
 }
 
 h1,
@@ -45,6 +46,11 @@ nav {
 		color: inherit;
 		text-decoration: inherit;
 	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
 }
 
 a,
