@@ -1,6 +1,8 @@
 <script lang="ts">
 	import 'iconify-icon';
 
+	export const prerender = true;
+
 	const email = 'gamer.center.mail@gmail.com';
 </script>
 
